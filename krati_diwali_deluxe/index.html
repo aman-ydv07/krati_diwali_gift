@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#160e1b">
+
+    <title>A Little Diwali Surprise for Krati</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =========================================
+         DIWALI GIFT INTRO
+    ========================================== -->
+
+    <div class="gift-intro" id="giftIntro">
+
+        <div class="gift-content">
+
+            <p class="gift-eyebrow">
+                A little Diwali surprise
+            </p>
+
+            <h1>
+                A little something for you, Miss Bhaaji...
+            </h1>
+
+            <p class="gift-description">
+                Because some people deserve more than just a simple Diwali wish.
+            </p>
+
+            <!-- Animated Envelope -->
+            <div class="envelope" id="envelope">
+
+                <div class="envelope-back"></div>
+
+                <div class="letter">
+                    <span>For Miss....K...K...Krati</span>
+
+                    <p>
+                        Made with a little creativity and lots of memories.
+                    </p>
+                </div>
+
+                <div class="envelope-front"></div>
+
+                <div class="envelope-flap"></div>
+
+                <div class="envelope-seal">
+                    ✦
+                </div>
+
+            </div>
+
+            <!-- Open Gift Button -->
+            <button class="open-gift-btn" id="openGift">
+                Open Your Gift <span>→</span>
+            </button>
+
+            <p class="gift-footer">
+                A small surprise, made just for you.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- END DIWALI GIFT INTRO -->
+
+    <!-- =========================================
+         BACKGROUND EFFECTS
+    ========================================== -->
+
+    <div class="ambient one"></div>
+    <div class="ambient two"></div>
+
+    <div class="progress" id="progress"></div>
+
+    <div class="sparkle-layer" id="sparkles"></div>
+
+    <!-- =========================================
+         NAVIGATION BAR
+    ========================================== -->
+
+    <nav class="navbar">
+        <a class="brand" href="#home">
+            <span class="brand-icon">✦</span>
+            <span>A LITTLE DIWALI SURPRISE</span>
+        </a>
+    
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#gallery">Little Moments</a>
+            <a href="#note">A Note for You</a>
+            <a href="#wishes">Wishes</a>
+        </div>
+    </nav>
+
+    <!-- =========================================
+         MAIN WEBSITE CONTENT
+    ========================================== -->
+
+    <main>
+
+        <!-- HERO SECTION -->
+
+        <header class="hero shell" id="home">
+
+            <div class="hero-copy reveal left">
+
+                <p class="eyebrow">
+                    ✦ A festive little something
+                </p>
+
+                <h1>
+                    Some people<br>
+                    make life a little<br>
+                    <em>brighter.</em>
+                </h1>
+
+                <p>
+                    This isn't a gift that comes in a box.
+                    It's a small collection of photographs, familiar smiles,
+                    random memories and a few words put together just for you.
+                </p>
+
+                <div class="actions">
+
+                    <a class="btn gold" href="#gallery">
+                        Take a little look ↘
+                    </a>
+
+                    <button class="btn outline" id="sparkleBtn">
+                        Make it sparkle ✦
+                    </button>
+
+                </div>
+
+                <small>
+                    Made with time, creativity and good wishes.
+                </small>
+
+            </div>
+
+            <!-- Hero Image -->
+
+            <div class="hero-art reveal right">
+
+                <div class="orbit"></div>
+                <div class="orbit second"></div>
+
+                <div class="hero-frame">
+                    <img
+                        src="assets/krati1.jpeg"
+                        alt="Favourite photo"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                </div>
+
+                <span class="tag tag-a">
+                    A little sunshine
+                </span>
+
+                <span class="tag tag-b">
+                    Keep shining ✨
+                </span>
+
+                <b class="star s1">✦</b>
+                <b class="star s2">✧</b>
+
+            </div>
+
+        </header>
+
+        <!-- INTRODUCTORY MESSAGE STRIP -->
+
+        <section class="strip shell reveal">
+
+            <span>✧</span>
+
+            <p>
+                Not every memorable thing needs a price tag.
+                Some things just need a little thought.
+            </p>
+
+            <span>✧</span>
+
+        </section>
+
+        <!-- =====================================
+             PHOTO GALLERY
+        ====================================== -->
+
+        <section class="gallery shell" id="gallery">
+
+            <div class="heading reveal">
+
+                <p class="eyebrow">
+                    THE PHOTO WALL
+                </p>
+
+                <h2>
+                    A little gallery of <em>you.</em>
+                </h2>
+
+                <p>
+                    Because one photo is never enough when there are
+                    so many lovely ones to choose from.
+                </p>
+
+            </div>
+
+            <!-- Photo Collage -->
+
+            <div class="collage">
+
+                <figure class="tile big reveal drop">
+                    <img
+                        src="assets/krati2.jpeg"
+                        alt="Photo 1"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>That effortless smile</figcaption>
+                </figure>
+
+                <figure class="tile reveal left">
+                    <img
+                        src="assets/krati6.jpeg"
+                        alt="Photo 2"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Good vibes, always</figcaption>
+                </figure>
+
+                <figure class="tile reveal drop">
+                    <img
+                        src="assets/krati15.jpeg"
+                        alt="Photo 3"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>A frame full of sunshine</figcaption>
+                </figure>
+
+                <figure class="tile reveal right">
+                    <img
+                        src="assets/krati12.jpeg"
+                        alt="Photo 4"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Simply being you</figcaption>
+                </figure>
+
+                <figure class="tile reveal up">
+                    <img
+                        src="assets/krati13.jpeg"
+                        alt="Photo 5"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Little moments, big smiles</figcaption>
+                </figure>
+
+                <figure class="tile reveal drop">
+                    <img
+                        src="assets/krati11.jpeg"
+                        alt="Photo 6"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Always camera-ready</figcaption>
+                </figure>
+
+                <figure class="tile reveal left">
+                    <img
+                        src="assets/krati10.jpeg"
+                        alt="Photo 7"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Main-character energy</figcaption>
+                </figure>
+
+                <figure class="tile wide reveal right">
+                    <img
+                        src="assets/krati8.jpeg"
+                        alt="Photo 8"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>One for the memories</figcaption>
+                </figure>
+
+                <figure class="tile reveal drop">
+                    <img
+                        src="assets/krati14.jpeg"
+                        alt="Photo 9"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Keep that spark</figcaption>
+                </figure>
+
+                <figure class="tile reveal up">
+                    <img
+                        src="assets/krati3.jpeg"
+                        alt="Photo 10"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Another lovely moment</figcaption>
+                </figure>
+
+                <figure class="tile reveal left">
+                    <img
+                        src="assets/krati7.jpeg"
+                        alt="Photo 11"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>Unfiltered happiness</figcaption>
+                </figure>
+
+                <figure class="tile reveal drop">
+                    <img
+                        src="assets/krati9.jpeg"
+                        alt="Photo 12"
+                        onerror="this.src='assets/photo-placeholder.svg'"
+                    >
+                    <figcaption>And many more to come</figcaption>
+                </figure>
+
+            </div>
+
+            <p class="gallery-foot reveal">
+                A dozen little frames. Countless reasons to smile.
+            </p>
+
+        </section>
+
+        <!-- =====================================
+             FRIENDSHIP STORY SECTION
+        ====================================== -->
+
+        <section class="story shell">
+
+            <!-- Candid Photo -->
+
+            <div class="story-photo reveal left">
+
+                <img
+                    src="assets/krati9.jpeg"
+                    alt="Candid photo"
+                    onerror="this.src='assets/photo-placeholder.svg'"
+                >
+
+                <span>Stay golden ✦</span>
+
+            </div>
+
+            <!-- Personal Message -->
+
+            <div class="story-copy reveal right">
+
+                <p class="eyebrow">
+                    A FEW WORDS BETWEEN THE PHOTOS
+                </p>
+
+                <h2>
+                    Some things are better said <em>simply.</em>
+                </h2>
+
+                <p>
+                    Here's to the random conversations that somehow turn
+                    into long ones, the silly jokes that never get old,
+                    and the little moments that make an ordinary day feel
+                    less ordinary.
+                </p>
+
+                <p>
+                    Different places, busy days and changing routines may
+                    come and go, but it's always nice to have people around
+                    with whom you can pick up a conversation just like that.
+                </p>
+
+                <p class="highlight">
+                    Keep being curious, kind, cheerful and unapologetically yourself.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================
+             QUOTE SECTION
+        ====================================== -->
+
+        <section class="quote shell reveal">
+
+            <div>“</div>
+
+            <p>
+                Some people don't need to do anything extraordinary.
+                Their presence makes ordinary moments feel special.
+            </p>
+
+            <small>
+                — A small thought for this festive season
+            </small>
+
+        </section>
+
+        <!-- =====================================
+             DIWALI WISHES SECTION
+        ====================================== -->
+
+        <section class="wishes shell" id="wishes">
+
+            <div class="heading reveal">
+
+                <p class="eyebrow">
+                    A LITTLE LIGHT FOR THE YEAR AHEAD
+                </p>
+
+                <h2>
+                    Wishing you a Diwali full of <em>good things.</em>
+                </h2>
+
+                <p>
+                    May the festive lights be a reminder of all the
+                    good things waiting around the corner.
+                </p>
+
+            </div>
+
+            <!-- Wishes Cards -->
+
+            <div class="wish-grid">
+
+                <article class="wish reveal drop">
+
+                    <b>🪔</b>
+
+                    <h3>More light</h3>
+
+                    <p>
+                        May every new day bring clarity, calm
+                        and a little more positivity.
+                    </p>
+
+                </article>
+
+                <article class="wish reveal up">
+
+                    <b>✨</b>
+
+                    <h3>More laughter</h3>
+
+                    <p>
+                        May your days be filled with good people,
+                        happy surprises and endless reasons to smile.
+                    </p>
+
+                </article>
+
+                <article class="wish reveal drop">
+
+                    <b>🌼</b>
+
+                    <h3>More growth</h3>
+
+                    <p>
+                        May your hard work open beautiful doors
+                        and take you closer to everything you want.
+                    </p>
+
+                </article>
+
+                <article class="wish reveal up">
+
+                    <b>🌙</b>
+
+                    <h3>More peace</h3>
+
+                    <p>
+                        May you always find time for yourself,
+                        your dreams and the things that make you happy.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        <!-- =====================================
+             FINAL DIWALI MESSAGE
+        ====================================== -->
+
+        <section class="final shell" id="note">
+
+            <div class="final-card reveal">
+
+                <div class="diya">
+                    ✦ 🪔 ✦
+                </div>
+
+                <p class="eyebrow">
+                    AND FINALLY...
+                </p>
+
+                <h2>
+                    Happy Diwali, <em>Krati!</em>
+                </h2>
+
+                <p>
+                    You once said that gifts don't always have to be about money.
+                    So here's one made of a little creativity, a few photographs
+                    and some genuinely good wishes. Hope this brings a smile
+                    to your face.
+                </p>
+
+                <p class="ps">
+                    P.S. Budget: zero. Effort: maximum. Gift delivered. :)
+                </p>
+
+                <small>
+                    — Your occasionally creative friend
+                </small>
+
+                <button class="btn gold" id="surpriseBtn">
+                    One last little surprise ✨
+                </button>
+
+                <p class="hidden" id="hidden">
+                    Keep smiling. The world could always use a little more of that.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+        Created with a little time, a little creativity
+        and lots of festive wishes.
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,1392 @@
+
+/* =====================================
+   MAIN THEME VARIABLES
+===================================== */
+
+:root {
+    --bg: #160e1b;
+    --gold: #efc879;
+    --pale: #ffe9b7;
+    --cream: #fff8eb;
+    --muted: #c9b9c9;
+    --line: rgba(239, 200, 121, .23);
+    --panel: rgba(45, 29, 48, .78);
+}
+
+/* =====================================
+   GLOBAL STYLES
+===================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    color: var(--cream);
+    font-family: "DM Sans", sans-serif;
+
+    background:
+        radial-gradient(circle at 12% 8%, #a0524b33, transparent 31rem),
+        radial-gradient(circle at 90% 38%, #b37b3626, transparent 30rem),
+        linear-gradient(145deg, #100a14, #24152a 55%, var(--bg));
+
+    overflow-x: hidden;
+}
+
+body:before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: .15;
+
+    background-image: radial-gradient(#f6d995 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+/* =====================================
+   AMBIENT BACKGROUND EFFECTS
+===================================== */
+
+.ambient {
+    position: fixed;
+    width: 22rem;
+    height: 22rem;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .13;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.one {
+    background: #f39a4a;
+    left: -12rem;
+    top: 20%;
+}
+
+.two {
+    background: #bd6d9d;
+    right: -12rem;
+    top: 65%;
+}
+
+/* =====================================
+   PROGRESS BAR & SPARKLE LAYER
+===================================== */
+
+.progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: var(--gold);
+    z-index: 20;
+    box-shadow: 0 0 12px var(--gold);
+}
+
+.sparkle-layer {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+}
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+
+/* =====================================
+   ELEGANT FLOATING NAVBAR
+===================================== */
+
+.navbar {
+    width: min(1100px, 91%);
+    margin: 22px auto;
+
+    padding: 13px 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    position: sticky;
+    top: 15px;
+    z-index: 100;
+
+    background: rgba(30, 18, 34, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(239, 200, 121, 0.22);
+    border-radius: 18px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* BRAND */
+
+.navbar .brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--gold);
+    text-decoration: none;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.13em;
+
+    white-space: nowrap;
+}
+
+.brand-icon {
+    font-size: 1.2rem;
+}
+
+/* NAV LINKS */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: var(--muted);
+    text-decoration: none;
+
+    font-size: 0.82rem;
+    font-weight: 500;
+
+    transition: color 0.3s ease;
+}
+
+/* GOLD UNDERLINE */
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 1px;
+
+    background: var(--gold);
+
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--pale);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 16px;
+
+        padding: 16px 12px;
+        border-radius: 16px;
+    }
+
+    .navbar .brand {
+        font-size: 0.68rem;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 12px 20px;
+    }
+
+    .nav-links a {
+        font-size: 0.74rem;
+    }
+}
+
+
+/* =====================================
+   COMMON LAYOUT & TYPOGRAPHY
+===================================== */
+
+.shell {
+    width: min(1100px, 91%);
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+}
+
+em {
+    color: var(--gold);
+    font-weight: 500;
+}
+
+.eyebrow {
+    color: var(--gold);
+    letter-spacing: .19em;
+    font-size: .69rem;
+    font-weight: 700;
+}
+
+/* =====================================
+   HERO SECTION
+===================================== */
+
+.hero {
+    min-height: 88vh;
+
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    gap: 3rem;
+    align-items: center;
+
+    padding: 45px 0 90px;
+}
+
+.hero h1 {
+    font-size: clamp(3.3rem, 7vw, 6.3rem);
+    line-height: 1.02;
+    letter-spacing: -.04em;
+    margin: 20px 0;
+}
+
+.hero-copy > p:not(.eyebrow) {
+    max-width: 570px;
+    color: var(--muted);
+    line-height: 1.95;
+}
+
+.actions {
+    display: flex;
+    gap: 13px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+/* =====================================
+   BUTTONS
+===================================== */
+
+.btn {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 13px 21px;
+
+    font: 600 .88rem "DM Sans", sans-serif;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: .25s;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px #efc8792b;
+}
+
+.gold {
+    background: var(--gold);
+    color: #241629;
+    border-color: var(--gold);
+}
+
+.outline {
+    background: transparent;
+    color: var(--pale);
+}
+
+.hero-copy small {
+    display: block;
+    color: #a997a9;
+    margin-top: 23px;
+}
+
+/* =====================================
+   HERO ART & IMAGE FRAME
+===================================== */
+
+.hero-art {
+    min-height: 490px;
+
+    display: grid;
+    place-items: center;
+
+    position: relative;
+}
+
+.hero-frame {
+    width: min(310px, 70vw);
+    aspect-ratio: 4/5;
+    padding: 9px;
+
+    border: 1px solid #efc879b3;
+    background: #efc87914;
+    border-radius: 48% 48% 22px 22px;
+
+    box-shadow: 0 25px 80px #0007;
+
+    position: relative;
+    z-index: 2;
+
+    transform: rotate(2deg);
+}
+
+.hero-frame img,
+.story-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: inherit;
+}
+
+/* =====================================
+   ORBIT ANIMATIONS & TAGS
+===================================== */
+
+.orbit {
+    position: absolute;
+    width: min(430px, 90vw);
+    aspect-ratio: 1;
+
+    border: 1px solid #efc87938;
+    border-radius: 50%;
+
+    animation: spin 35s linear infinite;
+}
+
+.orbit.second {
+    width: min(360px, 76vw);
+    border-style: dashed;
+    opacity: .5;
+    animation-direction: reverse;
+}
+
+.tag {
+    position: absolute;
+    z-index: 3;
+
+    background: var(--gold);
+    color: #28192b;
+
+    padding: 11px 16px;
+    border-radius: 8px;
+
+    font: italic 1rem "Playfair Display";
+    box-shadow: 0 10px 25px #0005;
+}
+
+.tag-a {
+    top: 15%;
+    right: 2%;
+    transform: rotate(6deg);
+}
+
+.tag-b {
+    bottom: 13%;
+    left: 1%;
+    transform: rotate(-6deg);
+}
+
+/* =====================================
+   DECORATIVE STARS
+===================================== */
+
+.star {
+    position: absolute;
+    color: var(--gold);
+    font-size: 2rem;
+    animation: twinkle 2.5s infinite;
+}
+
+.s1 {
+    top: 15%;
+    left: 9%;
+}
+
+.s2 {
+    bottom: 15%;
+    right: 8%;
+    animation-delay: 1s;
+}
+
+/* =====================================
+   QUOTE STRIP
+===================================== */
+
+.strip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+
+    padding: 22px 15px;
+
+    border-block: 1px solid var(--line);
+
+    text-align: center;
+    color: var(--pale);
+}
+
+.strip p {
+    font: italic clamp(1.1rem, 2.3vw, 1.5rem) "Playfair Display";
+    margin: 0;
+}
+
+.strip span {
+    color: var(--gold);
+}
+
+/* =====================================
+   GALLERY SECTION
+===================================== */
+
+.gallery,
+.wishes {
+    padding: 110px 0 80px;
+}
+
+.heading {
+    text-align: center;
+    max-width: 690px;
+    margin: 0 auto 45px;
+}
+
+.heading h2 {
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    margin: 12px 0;
+}
+
+.heading > p:last-child {
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* =====================================
+   PHOTO COLLAGE
+===================================== */
+
+.collage {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 190px;
+    gap: 17px;
+}
+
+.tile {
+    margin: 0;
+    padding: 9px 9px 37px;
+
+    position: relative;
+
+    background: #f6e7ca;
+    border-radius: 5px;
+
+    box-shadow: 0 15px 30px #0004;
+
+    transform: rotate(var(--tilt, 0deg));
+    transition: transform .35s, box-shadow .35s;
+}
+
+.tile:hover {
+    transform: translateY(-9px) rotate(0deg) scale(1.025) !important;
+    z-index: 4;
+    box-shadow: 0 24px 42px #0007;
+}
+
+.tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: #4a3349;
+    
+}
+
+.tile figcaption {
+    position: absolute;
+    left: 8px;
+    right: 8px;
+    bottom: 9px;
+
+    color: #483044;
+    text-align: center;
+
+    font: italic .85rem "Playfair Display";
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.big {
+    grid-column: span 2;
+    grid-row: span 2;
+    --tilt: -1deg;
+}
+
+.wide {
+    grid-column: span 2;
+    --tilt: -1deg;
+}
+
+.tile:nth-child(2n) {
+    --tilt: 1.5deg;
+}
+
+.gallery-foot {
+    text-align: center;
+    color: #b8a6b6;
+    font: italic 1.1rem "Playfair Display";
+    margin-top: 32px;
+}
+
+/* =====================================
+   STORY SECTION
+===================================== */
+
+.story {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    gap: 5rem;
+    align-items: center;
+
+    padding: 90px 0;
+}
+
+.story-photo {
+    position: relative;
+    padding: 12px;
+
+    background: #f2dfbd;
+
+    transform: rotate(-3deg);
+    box-shadow: 0 20px 45px #0005;
+
+    aspect-ratio: 4/5;
+}
+
+.story-photo span {
+    position: absolute;
+    right: -20px;
+    bottom: 28px;
+
+    padding: 12px 17px;
+
+    background: var(--gold);
+    color: #28182a;
+
+    border-radius: 6px;
+
+    font: italic 1rem "Playfair Display";
+    transform: rotate(7deg);
+}
+
+.story-copy h2 {
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    line-height: 1.15;
+    margin: 13px 0 22px;
+}
+
+.story-copy p:not(.eyebrow) {
+    color: var(--muted);
+    line-height: 1.95;
+}
+
+.story-copy .highlight {
+    color: var(--pale) !important;
+
+    font: italic 1.2rem "Playfair Display";
+
+    border-left: 2px solid var(--gold);
+    padding-left: 17px;
+    margin-top: 25px;
+}
+
+/* =====================================
+   QUOTE SECTION
+===================================== */
+
+.quote {
+    margin: 35px auto 75px;
+    padding: 52px 8%;
+
+    text-align: center;
+
+    border: 1px solid var(--line);
+    border-radius: 24px;
+
+    background: linear-gradient(120deg, #472c42aa, #25192ecc);
+}
+
+.quote div {
+    color: var(--gold);
+    font: 5rem "Playfair Display";
+    height: 55px;
+}
+
+.quote p {
+    color: var(--pale);
+
+    font: italic clamp(1.5rem, 3vw, 2.3rem)/1.5 "Playfair Display";
+
+    max-width: 850px;
+    margin: 10px auto 20px;
+}
+
+.quote small {
+    color: var(--muted);
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+/* =====================================
+   WISHES SECTION
+===================================== */
+
+.wish-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+}
+
+.wish {
+    padding: 27px 19px;
+
+    text-align: center;
+
+    border: 1px solid var(--line);
+    border-radius: 18px;
+
+    background: var(--panel);
+
+    transition: .3s;
+}
+
+.wish:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.wish b {
+    font-size: 2rem;
+}
+
+.wish h3 {
+    color: var(--pale);
+    font-size: 1.35rem;
+}
+
+.wish p {
+    color: var(--muted);
+    font-size: .87rem;
+    line-height: 1.75;
+    margin-bottom: 0;
+}
+
+/* =====================================
+   FINAL MESSAGE SECTION
+===================================== */
+
+.final {
+    padding: 35px 0 110px;
+}
+
+.final-card {
+    max-width: 850px;
+    margin: auto;
+
+    padding: 55px clamp(22px, 6vw, 70px);
+
+    text-align: center;
+
+    border: 1px solid #efc87966;
+    border-radius: 26px;
+
+    background:
+        radial-gradient(circle at 50% 0%, #69443855, transparent 50%),
+        linear-gradient(135deg, #3b263d, #211629);
+
+    box-shadow: 0 25px 70px #0004;
+}
+
+.final-card h2 {
+    font-size: clamp(2.8rem, 6vw, 4.6rem);
+    margin: 13px 0 20px;
+}
+
+.final-card > p:not(.eyebrow) {
+    color: var(--muted);
+    line-height: 2;
+}
+
+.final-card .ps {
+    color: var(--pale) !important;
+    font: italic 1.15rem "Playfair Display";
+}
+
+.final-card small {
+    display: block;
+    color: #c3adbf;
+    margin: 20px 0 28px;
+}
+
+.diya {
+    color: var(--gold);
+    font-size: 2rem;
+    animation: flame 2s infinite;
+}
+
+.hidden {
+    display: none !important;
+    color: var(--pale) !important;
+    font: italic 1.25rem "Playfair Display" !important;
+}
+
+.hidden.show {
+    display: block !important;
+    animation: pop .6s ease;
+}
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    text-align: center;
+    color: #a995a8;
+    font-size: .8rem;
+    padding: 15px 20px 48px;
+}
+
+/* =====================================
+   FALLING SPARKLES
+===================================== */
+
+.spark {
+    position: absolute;
+    top: -20px;
+
+    color: var(--gold);
+    text-shadow: 0 0 12px var(--gold);
+
+    animation: fall linear forwards;
+}
+
+/* =====================================
+   SCROLL REVEAL ANIMATIONS
+===================================== */
+
+.reveal {
+    opacity: 0;
+
+    transition:
+        opacity .85s ease,
+        transform .85s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0) rotate(var(--tilt, 0deg));
+}
+
+.up {
+    transform: translateY(55px);
+}
+
+.left {
+    transform: translateX(-65px);
+}
+
+.right {
+    transform: translateX(65px);
+}
+
+.drop {
+    transform: translateY(-75px) rotate(-4deg);
+}
+
+/* =====================================
+   MAIN KEYFRAME ANIMATIONS
+===================================== */
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes twinkle {
+    0%,
+    100% {
+        opacity: .45;
+        transform: scale(.8);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(25deg);
+    }
+}
+
+@keyframes flame {
+    50% {
+        transform: translateY(-5px) scale(1.06);
+    }
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(500deg);
+        opacity: 0;
+    }
+}
+
+@keyframes pop {
+    from {
+        opacity: 0;
+        transform: translateY(12px) scale(.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* =====================================
+   TABLET RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 850px) {
+
+    .hero {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 0 80px;
+    }
+
+    .hero-art {
+        min-height: 440px;
+    }
+
+    .hero-copy > p:not(.eyebrow) {
+        margin: auto;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .wish-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collage {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 170px;
+    }
+
+    .big {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+}
+
+/* =====================================
+   MOBILE RESPONSIVE DESIGN
+===================================== */
+
+@media (max-width: 560px) {
+
+    nav {
+        flex-direction: column;
+        gap: 13px;
+    }
+
+    nav a {
+        font-size: .75rem;
+        margin: 0 13px 0 0;
+    }
+
+    .hero h1 {
+        font-size: 3.35rem;
+    }
+
+    .hero-art {
+        min-height: 380px;
+    }
+
+    .tag-a {
+        right: 0;
+    }
+
+    .tag-b {
+        left: 0;
+    }
+
+    .strip {
+        gap: 10px;
+    }
+
+    .gallery {
+        padding-top: 80px;
+    }
+
+    .collage {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 165px;
+        gap: 12px;
+    }
+
+    .big {
+        grid-column: span 2;
+        grid-row: span 2;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 65px 0;
+    }
+
+    .story-photo {
+        width: 80%;
+        margin: auto;
+    }
+
+    .wish-grid {
+        gap: 10px;
+    }
+
+    .wish {
+        padding: 22px 12px;
+    }
+
+    .quote {
+        padding: 40px 7%;
+    }
+
+    .final-card {
+        padding: 42px 22px;
+    }
+}
+
+/* =====================================
+   ACCESSIBILITY - REDUCED MOTION
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =====================================
+   DIWALI GIFT INTRO
+===================================== */
+
+.gift-intro {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+    padding: 25px;
+
+    text-align: center;
+
+    background:
+        radial-gradient(circle at 50% 40%, #54202e 0%, #260d19 55%, #160810 100%);
+
+    transition: opacity 0.9s ease, visibility 0.9s ease;
+}
+
+/* =====================================
+   GIFT INTRO DECORATIVE SPARKLES
+===================================== */
+
+.gift-intro::before,
+.gift-intro::after {
+    content: "✦";
+
+    position: absolute;
+
+    color: #e8c77d;
+    opacity: 0.35;
+
+    animation: giftSparkle 4s infinite ease-in-out;
+}
+
+.gift-intro::before {
+    top: 15%;
+    left: 15%;
+    font-size: 35px;
+}
+
+.gift-intro::after {
+    right: 17%;
+    bottom: 18%;
+    font-size: 28px;
+    animation-delay: 1.5s;
+}
+
+/* =====================================
+   GIFT INTRO CONTENT
+===================================== */
+
+.gift-content {
+    width: 100%;
+    max-width: 600px;
+
+    position: relative;
+    z-index: 2;
+
+    animation: giftFadeIn 1.2s ease both;
+}
+
+.gift-eyebrow {
+    color: #e8c77d;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+    margin-bottom: 18px;
+}
+
+.gift-content h1 {
+    color: #fff1d5;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 48px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 15px;
+}
+
+.gift-description {
+    color: #d9bdad;
+    font-size: 14px;
+    line-height: 1.8;
+
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+/* =====================================
+   ENVELOPE
+===================================== */
+
+.envelope {
+    width: 230px;
+    height: 155px;
+
+    position: relative;
+
+    margin: 75px auto 45px;
+
+    perspective: 1000px;
+
+    filter: drop-shadow(0 18px 25px rgba(0, 0, 0, 0.35));
+}
+
+.envelope-back {
+    position: absolute;
+    inset: 0;
+
+    background: #d9a95b;
+    border-radius: 5px;
+
+    z-index: 1;
+}
+
+.envelope-front {
+    position: absolute;
+    inset: 0;
+
+    background: #b97842;
+
+    clip-path: polygon(0 0, 50% 60%, 100% 0, 100% 100%, 0 100%);
+
+    z-index: 4;
+    border-radius: 5px;
+}
+
+.envelope-flap {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: #e5bd75;
+
+    clip-path: polygon(0 0, 100% 0, 50% 58%);
+
+    transform-origin: top center;
+    transition: transform 0.8s ease;
+
+    z-index: 5;
+}
+
+/* =====================================
+   ENVELOPE LETTER
+===================================== */
+
+.letter {
+    position: absolute;
+
+    width: 85%;
+    height: 125px;
+
+    left: 7.5%;
+    top: 10px;
+
+    background: #fff5dc;
+    border-radius: 4px;
+
+    z-index: 2;
+
+    padding: 20px 12px;
+
+    transition: transform 1s ease;
+
+    color: #672d34;
+}
+
+.letter span {
+    font-family: Georgia, serif;
+    font-size: 21px;
+    font-style: italic;
+}
+
+.letter p {
+    font-size: 10px;
+    margin-top: 10px;
+    color: #805b50;
+}
+
+/* =====================================
+   ENVELOPE SEAL
+===================================== */
+
+.envelope-seal {
+    position: absolute;
+
+    width: 37px;
+    height: 37px;
+
+    border-radius: 50%;
+
+    background: #762b38;
+    color: #f6d993;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    left: 50%;
+    top: 48%;
+
+    transform: translate(-50%, -50%);
+
+    z-index: 6;
+
+    border: 2px solid #e8c77d;
+
+    font-size: 19px;
+
+    transition: opacity 0.3s ease;
+}
+
+/* =====================================
+   ENVELOPE OPENING ANIMATION
+===================================== */
+
+.envelope.opening .envelope-flap {
+    transform: rotateX(180deg);
+    z-index: 1;
+}
+
+.envelope.opening .letter {
+    transform: translateY(-100px);
+    z-index: 3;
+}
+
+.envelope.opening .envelope-seal {
+    opacity: 0;
+}
+
+/* =====================================
+   GIFT INTRO EXIT ANIMATION
+===================================== */
+
+.gift-intro.leaving {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* =====================================
+   OPEN GIFT BUTTON
+===================================== */
+
+.open-gift-btn {
+    border: 1px solid #e8c77d;
+
+    background: linear-gradient(135deg, #e8c77d, #bd8b48);
+
+    color: #35141d;
+
+    padding: 15px 35px;
+
+    border-radius: 50px;
+
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.open-gift-btn span {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.open-gift-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(232, 199, 125, 0.25);
+}
+
+/* =====================================
+   GIFT FOOTER
+===================================== */
+
+.gift-footer {
+    margin-top: 25px;
+
+    color: #b99587;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+/* =====================================
+   GIFT INTRO KEYFRAME ANIMATIONS
+===================================== */
+
+@keyframes giftFadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes giftSparkle {
+
+    0%,
+    100% {
+        opacity: 0.2;
+        transform: scale(0.8) rotate(0deg);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.3) rotate(45deg);
+    }
+
+}
+
+/* =====================================
+   GIFT INTRO MOBILE RESPONSIVENESS
+===================================== */
+
+@media (max-width: 600px) {
+
+    .gift-content h1 {
+        font-size: 32px;
+    }
+
+    .envelope {
+        transform: scale(0.9);
+        margin-top: 65px;
+        margin-bottom: 35px;
+    }
+
+    .gift-description {
+        font-size: 13px;
+    }
+
+}
+
+/* =====================================
+   GIFT INTRO ACCESSIBILITY
+===================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .gift-content,
+    .gift-intro::before,
+    .gift-intro::after {
+        animation: none;
+    }
+
+    .envelope-flap,
+    .letter,
+    .gift-intro {
+        transition-duration: 0.01ms;
+    }
+
+}
